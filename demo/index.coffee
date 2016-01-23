@@ -1,4 +1,5 @@
 React = require 'react'
+ReactDOM = require 'react-dom'
 {div} = React.DOM
 Dragarea = React.createFactory(require '../')
 
@@ -52,4 +53,4 @@ App = React.createClass
                 div null, 'Totally placeholder 2'
                 div null, 'Totally placeholder 3'
 
-React.render(React.createElement(App), document.getElementById('app'))
+ReactDOM.render(React.createElement(App), document.getElementById('app'))
