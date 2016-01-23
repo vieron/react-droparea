@@ -1,5 +1,6 @@
 Dragster = require 'dragster-avocode-fork'
 React = require 'react'
+ReactDOM = require 'react-dom'
 {div, input} = React.DOM
 
 _enter = 0
@@ -42,7 +43,7 @@ Droparea = React.createClass
     shouldComponentBeActive: !@props.shouldParentBeActiveWhenHovering
 
   componentDidMount: ->
-    @_domElement = @getDOMNode()
+    @_domElement = ReactDOM.findDOMNode(@)
 
     @_dragster = new Dragster(@_domElement)
     @_domElement.addEventListener 'drop', @_onDrop
@@ -65,7 +66,7 @@ Droparea = React.createClass
     @_dragster = null
 
   open: ->
-    @refs.fileInput.getDOMNode().click()
+    @refs.fileInput.click()
 
   _onDragOver: (e) ->
     e.preventDefault()
@@ -161,7 +162,7 @@ Droparea = React.createClass
   _onClick: (e) ->
     unless @props.disableClick
       e.stopPropagation()
-      @refs.fileInput.getDOMNode().click()
+      @refs.fileInput.click()
 
   _handleOnDragActive: (state) ->
     if @props.onDragActive?

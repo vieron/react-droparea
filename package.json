@@ -20,10 +20,11 @@
     "url": "git://github.com/avocode/react-droparea.git"
   },
   "dependencies": {
-    "dragster-avocode-fork": "^1.0.1"
+    "dragster-avocode-fork": "^1.0.1",
+    "react-dom": "^0.14.6"
   },
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.6"
   },
   "author": "Petr Brzek",
   "license": "MIT",
